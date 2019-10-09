@@ -1,0 +1,33 @@
+.friend-list {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.friend-list .item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 14px;
+    box-shadow: -4px 2px 5px 0px rgba(0, 0, 0, 0.53);
+    padding: 10px;
+}
+
+.friend-list .avatar {
+    border-radius: 10px
+}
+
+.friend-list .status {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid black;
+    border-radius: 50%
+}
+
+.friend-list .status.red {
+    background-color: red;
+}
+
+.friend-list .status.green {
+    background-color: green;
+}
