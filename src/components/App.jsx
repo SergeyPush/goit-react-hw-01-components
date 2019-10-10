@@ -1,13 +1,15 @@
 import React from 'react';
+
 import Profile from './Profile/Profile';
 import Stats from './Stats/Stats';
 import FriendList from './FriendList/FriendList';
 import TransactionHistory from './Transactions/TransactionHistory';
+
 import user from '../data/user.json';
 import friends from '../data/friends.json';
 import transactions from '../data/transactions.json';
 
-import './App.css';
+import './App.module.css';
 
 const stats = [
   { id: 'id-1', label: '.docx', percentage: 22 },

@@ -1,26 +1,29 @@
 import React from 'react';
-import './FriendList.css';
 import T from 'prop-types';
+
+import style from './FriendList.module.css';
 
 const FriendList = ({ friends }) => {
   console.log(friends);
 
   return (
     <div>
-      <ul className="friend-list">
+      <ul className={style.friendList}>
         {friends.map(friend => {
-          const statusClass = ['status'];
-          friend.isOnline ? statusClass.push('green') : statusClass.push('red');
+          const statusClass = [style.status];
+          friend.isOnline
+            ? statusClass.push(style.green)
+            : statusClass.push(style.red);
           return (
-            <li className="item" key={friend.id}>
+            <li className={style.item} key={friend.id}>
               <span className={statusClass.join(' ')}></span>
               <img
-                className="avatar"
+                className={style.avatar}
                 src={friend.avatar}
                 alt={friend.name}
                 width="48"
               />
-              <p className="name">{friend.name}</p>
+              <p className={style.name}>{friend.name}</p>
             </li>
           );
         })}

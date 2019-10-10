@@ -1,17 +1,17 @@
 import React from 'react';
 import T from 'prop-types';
-import './Stats.css';
+import style from './Stats.module.css';
 
 const Stats = ({ title, stats }) => {
   return (
-    <section className="stats-section">
-      <h2 className="title">{title}</h2>
-      <ul className="stat-list">
+    <section className={style.statSection}>
+      <h2 className={style.title}>{title}</h2>
+      <ul className={style.statList}>
         {stats.map(item => {
           return (
-            <li className="item" key={item.id}>
-              <span className="label">{item.label}</span>
-              <span className="percentage">{item.percentage}%</span>
+            <li className={style.item} key={item.id}>
+              <span className={style.label}>{item.label}</span>
+              <span className={style.percentage}>{item.percentage}%</span>
             </li>
           );
         })}
