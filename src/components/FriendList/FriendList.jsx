@@ -4,19 +4,19 @@ import T from 'prop-types';
 import style from './FriendList.module.css';
 
 const FriendList = ({ friends }) => {
-  console.log(friends);
-
   return (
     <div>
       <ul className={style.friendList}>
         {friends.map(friend => {
           const statusClass = [style.status];
-          friend.isOnline
-            ? statusClass.push(style.green)
-            : statusClass.push(style.red);
+          if (friend.isOnline) {
+            statusClass.push(style.green);
+          } else {
+            statusClass.push(style.red);
+          }
           return (
             <li className={style.item} key={friend.id}>
-              <span className={statusClass.join(' ')}></span>
+              <span className={statusClass.join(' ')} />
               <img
                 className={style.avatar}
                 src={friend.avatar}
@@ -40,6 +40,6 @@ FriendList.propTypes = {
       isOnline: T.bool.isRequired,
       name: T.string.isRequired,
     }),
-  ),
+  ).isRequired,
 };
 export default FriendList;

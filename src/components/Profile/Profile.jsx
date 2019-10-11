@@ -41,7 +41,7 @@ Profile.propTypes = {
       likes: T.number.isRequired,
       views: T.number.isRequired,
     }),
-  }),
+  }).isRequired,
 };
 
 export default Profile;

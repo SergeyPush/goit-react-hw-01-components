@@ -28,6 +28,6 @@ Stats.propTypes = {
       label: T.string.isRequired,
       percentage: T.number.isRequired,
     }),
-  ),
+  ).isRequired,
 };
 export default Stats;
