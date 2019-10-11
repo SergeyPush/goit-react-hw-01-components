@@ -27,10 +27,12 @@
   border-radius: 50%;
 }
 
-.status.red {
+.offline {
+  composes: status;
   background-color: #f44336;
 }
 
-.status.green {
+.online {
+  composes: status;
   background-color: #43a047;
 }

@@ -4,19 +4,17 @@ import T from 'prop-types';
 import style from './FriendList.module.css';
 
 const FriendList = ({ friends }) => {
+  const makeClass = online => {
+    return online ? style.online : style.offline;
+  };
+
   return (
     <div>
       <ul className={style.friendList}>
         {friends.map(friend => {
-          const statusClass = [style.status];
-          if (friend.isOnline) {
-            statusClass.push(style.green);
-          } else {
-            statusClass.push(style.red);
-          }
           return (
             <li className={style.item} key={friend.id}>
-              <span className={statusClass.join(' ')} />
+              <span className={makeClass(friend.isOnline)} />
               <img
                 className={style.avatar}
                 src={friend.avatar}

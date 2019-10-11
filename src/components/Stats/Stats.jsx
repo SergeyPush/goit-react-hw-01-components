@@ -5,7 +5,7 @@ import style from './Stats.module.css';
 const Stats = ({ title, stats }) => {
   return (
     <section className={style.statSection}>
-      <h2 className={style.title}>{title}</h2>
+      {title && <h2 className={style.title}>{title}</h2>}
       <ul className={style.statList}>
         {stats.map(item => {
           return (
@@ -20,8 +20,12 @@ const Stats = ({ title, stats }) => {
   );
 };
 
+Stats.defaultProps = {
+  title: '',
+};
+
 Stats.propTypes = {
-  title: T.string.isRequired,
+  title: T.string,
   stats: T.arrayOf(
     T.shape({
       id: T.string.isRequired,
